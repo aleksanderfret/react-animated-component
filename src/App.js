@@ -1,5 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const App = () => <div>React animated component</div>;
+import { FadeOut } from './components';
+
+const App = () => {
+  const [isVisible, setVisibility] = useState(false);
+
+  const handleVisibility = () => setVisibility(isVisible => !isVisible);
+
+  return (
+    <>
+      <button onClick={handleVisibility} type="button">
+        {isVisible ? 'hide' : 'show'}
+      </button>
+      <FadeOut
+        inDelay={1000}
+        outDelay={3000}
+        inDuration={5000}
+        isVisible={isVisible}
+      >
+        <div
+          style={{
+            width: '300px',
+            height: '100px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#fff',
+            fontSize: '18px',
+            backgroundColor: 'green'
+          }}
+        >
+          hello
+        </div>
+      </FadeOut>
+    </>
+  );
+};
 
 export default App;
