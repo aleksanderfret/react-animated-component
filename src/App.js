@@ -25,7 +25,7 @@ const App = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#fff',
+            color: '#ffffff',
             fontSize: '18px',
             backgroundColor: 'green'
           }}
