@@ -1,4 +1,5 @@
 const path = require('path');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
@@ -27,8 +28,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -46,8 +46,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ verbose: true }),
     new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$'
+      template: './src/index.html'
+      // inlineSource: '.(js|css)$'
     })
   ]
 };
