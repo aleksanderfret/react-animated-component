@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { FadeOut } from './components';
+import { FadeIn, FadeInOut, FadeOut } from './components';
 
 const App = () => {
   const [isVisible, setVisibility] = useState(false);
@@ -16,6 +16,29 @@ const App = () => {
         inDelay={1000}
         outDelay={3000}
         inDuration={5000}
+        outDuration={2500}
+        isVisible={isVisible}
+      >
+        <div
+          style={{
+            width: '300px',
+            height: '100px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#ffffff',
+            fontSize: '18px',
+            backgroundColor: 'red'
+          }}
+        >
+          hello
+        </div>
+      </FadeOut>
+      <FadeIn
+        inDelay={1000}
+        outDelay={3000}
+        inDuration={5000}
+        outDuration={2500}
         isVisible={isVisible}
       >
         <div
@@ -32,7 +55,29 @@ const App = () => {
         >
           hello
         </div>
-      </FadeOut>
+      </FadeIn>
+      <FadeInOut
+        inDelay={1000}
+        outDelay={3000}
+        outDuration={2500}
+        inDuration={5000}
+        isVisible={isVisible}
+      >
+        <div
+          style={{
+            width: '300px',
+            height: '100px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#ffffff',
+            fontSize: '18px',
+            backgroundColor: 'blue'
+          }}
+        >
+          hello
+        </div>
+      </FadeInOut>
     </>
   );
 };
